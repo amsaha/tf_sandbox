@@ -1,5 +1,5 @@
 # From: https://www.tensorflow.org/get_started/get_started
-from __future__ import print_function
+#from __future__ import print_function
 import tensorflow as tf
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
@@ -44,5 +44,12 @@ fixb = tf.assign(b, [1.])
 sess.run([fixW, fixb])
 print(sess.run(loss, {x: [1, 2, 3, 4], y: [0, -1, -2, -3]}))
 
-# Generate the data that will read by tensorboard
+# Generate the data that will by read by tensorboard
+#
+# Run tensorboard as follows:
+#
+# > tensorboard --logdir graphs
+#
+# Then use the browser to connect to http://localhost:6006 (port might change,
+# so look at the output of launching tensorboard.
 file_writer = tf.summary.FileWriter('./graph', sess.graph)
